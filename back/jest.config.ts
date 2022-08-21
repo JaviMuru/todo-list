@@ -11,6 +11,5 @@ export default {
       babelConfig: true,
       diagnostics: true
     }
-  },
-  globalSetup: '<rootDir>/global.setup.js'
+  }
 };

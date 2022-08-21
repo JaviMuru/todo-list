@@ -7,9 +7,9 @@ describe('Todos (e2e)', () => {
 
   beforeAll(() => {
     postgresSqlConnection = new Pool({
-      host: 'localhost',
-      user: 'postgres',
-      password: 'postgres',
+      host: process.env.SQL_HOST,
+      user: process.env.SQL_USER,
+      password: process.env.SQL_PASSWORD,
       port: 5432
     });
   });

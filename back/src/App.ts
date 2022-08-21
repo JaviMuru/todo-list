@@ -7,7 +7,10 @@ import { updateTodoController } from './infrastructure/controllers/v1/updateTodo
 import { deleteTodoController } from './infrastructure/controllers/v1/deleteTodoController';
 
 export const app = express();
-const port = 4000;
+
+require('dotenv').config()
+
+const port = process.env.API_PORT;
 
 const errorHandler =
   (fn: (req: Request, res: Response, next: NextFunction) => void) =>

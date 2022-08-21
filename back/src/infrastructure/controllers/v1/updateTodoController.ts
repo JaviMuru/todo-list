@@ -13,7 +13,7 @@ export class UpdateTodoController {
 
     await this.todosService.update(id, completed);
 
-    response.status(200).send(`Todo updated with ID: ${id}`);
+    response.status(200).send();
   }
 }
 

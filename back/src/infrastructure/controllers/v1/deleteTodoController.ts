@@ -12,7 +12,7 @@ export class DeleteTodoController {
 
     await this.todosService.remove(id);
 
-    response.status(200).send(`Todo deleted with ID: ${id}`);
+    response.status(200).send();
   }
 }
 
