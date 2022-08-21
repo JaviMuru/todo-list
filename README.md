@@ -49,7 +49,8 @@ $ yarn start
 Execute tests:
 
 ```sh
-$ docker-compose up -d 
+$ docker-compose up -d
+$ yarn run migrations
 $ yarn test  
 ```
 
