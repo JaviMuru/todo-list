@@ -1,0 +1,9 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": {"ENV": "SQL_USER"},
+    "password": {"ENV": "SQL_PASSWORD"},
+    "host": "localhost"
+  }
+}
+
