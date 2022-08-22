@@ -1,12 +1,12 @@
-import { Todo } from '../../../core/domain/model/Todo/Todo'
+import { Todo } from 'core/domain/model/Todo/Todo'
 import { Card, Col, PageHeader, Row } from 'antd'
 import { AddTodoForm } from './_components/AddTodoForm'
 import { TodoList } from './_components/TodoList'
 import React from 'react'
 
 import './styles.less'
-import { Loading } from '../../_base/Loading'
-import { TodoCreate } from '../../../core/domain/model/Todo/TodoCreate'
+import { LoadingScreen } from '../../_base/LoadingScreen'
+import { TodoCreate } from 'core/domain/model/Todo/TodoCreate'
 
 interface Props {
   todos?: Todo[]
@@ -16,9 +16,9 @@ interface Props {
   toggleTodoStatus: (todo: Todo) => void
 }
 
-export const TodoListView = ({ todos =[], isLoading, onSubmit, removeTodo, toggleTodoStatus }: Props) => {
+export const TodoListView = ({ todos = [], isLoading, onSubmit, removeTodo, toggleTodoStatus }: Props) => {
   if (isLoading) {
-    return <Loading />
+    return <LoadingScreen />
   }
 
   return (
