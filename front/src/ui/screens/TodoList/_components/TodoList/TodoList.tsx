@@ -12,7 +12,7 @@ interface Props {
 export const TodoList: React.FC<Props> = ({ todos, onTodoRemoval, onTodoToggle }) => (
   <List
     locale={{
-      emptyText: "There's nothing to do :("
+      emptyText: 'Nothing to do'
     }}
     dataSource={todos}
     renderItem={todo => <TodoItem todo={todo} onTodoToggle={onTodoToggle} onTodoRemoval={onTodoRemoval} />}
