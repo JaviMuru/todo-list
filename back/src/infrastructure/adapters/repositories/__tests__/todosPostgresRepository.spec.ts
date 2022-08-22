@@ -2,16 +2,33 @@ import { todosPostgresSqlRepository } from '../todosPostgresSqlRepository';
 import { postgresSqlConnection } from '../../../database/postgresDatabase';
 
 describe('TodosPostgresRepository', () => {
-  it('should get all todos ordered by created date', async () => {
+  it('should get all todos', async () => {
+    const todoCollection = [
+      {
+        id: '6443164d-0a4f-441e-9d76-f3bdf9a8c885',
+        task: 'Task',
+        completed: false,
+        created_date: '2022-08-22T05:15:10.325Z'
+      }
+    ];
     jest
       .spyOn(postgresSqlConnection.getConnection(), 'query')
       // @ts-ignore
-      .mockResolvedValueOnce({ rows: [], rowsCount: 0 });
+      .mockResolvedValueOnce({ rows: todoCollection, rowsCount: 0 });
 
     const todos = await todosPostgresSqlRepository.searchAll();
 
-    expect(todos).toHaveLength(0);
-    expect(postgresSqlConnection.getConnection().query).toHaveBeenCalledTimes(1);
+    expect(postgresSqlConnection.getConnection().query).toHaveBeenCalledTimes(
+      1
+    );
+    expect(todos).toEqual([
+      {
+        id: '6443164d-0a4f-441e-9d76-f3bdf9a8c885',
+        task: 'Task',
+        completed: false,
+        createdDate: '2022-08-22T05:15:10.325Z'
+      }
+    ]);
   });
 
   it('should create a todo', async () => {

@@ -13,7 +13,7 @@ describe('CreateTodoController', () => {
     createTodoController = new CreateTodoController(todosServiceMock);
   });
 
-  it('should list all todos', async () => {
+  it('should create a todo', async () => {
     await createTodoController.execute(mockRequest(), mockResponse());
 
     expect(todosServiceMock.save).toHaveBeenCalled();

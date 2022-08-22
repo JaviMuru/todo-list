@@ -12,7 +12,7 @@ describe('DeleteTodoController', () => {
     deleteTodoController = new DeleteTodoController(todosServiceMock);
   });
 
-  it('should delete a task', async () => {
+  it('should delete a todo', async () => {
     await deleteTodoController.execute(mockRequest(), mockResponse());
 
     expect(todosServiceMock.remove).toHaveBeenCalled();

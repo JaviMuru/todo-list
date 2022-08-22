@@ -12,7 +12,14 @@ describe('TodosService', () => {
     const todos = await todosService.findAll();
 
     expect(todosRepositoryMock.searchAll).toHaveBeenCalledTimes(1);
-    expect(todos).toEqual([{ id: '1', task: 'Task 1', completed: false }]);
+    expect(todos).toEqual([
+      {
+        id: '6443164d-0a4f-441e-9d76-f3bdf9a8c885',
+        task: 'Task',
+        completed: false,
+        createdDate: '2022-08-22T05:15:10.325Z'
+      }
+    ]);
   });
 
   it('should create a todo', async () => {
@@ -24,7 +31,7 @@ describe('TodosService', () => {
   });
 
   it('should update a todo', async () => {
-    const todoId = '1';
+    const todoId = '6443164d-0a4f-441e-9d76-f3bdf9a8c885';
     const todoCompleted = false;
 
     await todosService.update(todoId, todoCompleted);
@@ -36,7 +43,7 @@ describe('TodosService', () => {
   });
 
   it('should delete a todo', async () => {
-    const todoId = '1';
+    const todoId = '6443164d-0a4f-441e-9d76-f3bdf9a8c885';
 
     await todosService.remove(todoId);
 

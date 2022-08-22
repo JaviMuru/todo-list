@@ -14,7 +14,7 @@ describe('UpdateTodoController', () => {
     updateTodoController = new UpdateTodoController(todosServiceMock);
   });
 
-  it('should update task state', async () => {
+  it('should update todo state', async () => {
     await updateTodoController.execute(mockRequest(), mockResponse());
 
     expect(todosServiceMock.update).toHaveBeenCalled();
