@@ -1,9 +1,9 @@
 import { TodoListView } from './TodoList.view'
 import { todoService } from '../../../core/services/TodoService'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { Todo } from '../../../core/domain/model/Todo/Todo'
+import { Todo } from 'core/domain/model/Todo/Todo'
 import { message } from 'antd'
-import { TodoCreate } from '../../../core/domain/model/Todo/TodoCreate'
+import { TodoCreate } from 'core/domain/model/Todo/TodoCreate'
 
 export const TodoListController = () => {
   const { data: todos, refetch, isLoading } = useQuery(['todos'], todoService.findAll)

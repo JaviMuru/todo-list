@@ -1,9 +1,9 @@
 import React from 'react'
 import { Form, Row, Col, Button, Input } from 'antd'
 import { PlusCircleFilled } from '@ant-design/icons'
+import { TodoCreate } from 'core/domain/model/Todo/TodoCreate'
 
 import './styles.less'
-import { TodoCreate } from '../../../../../core/domain/model/Todo/TodoCreate'
 
 interface Props {
   onFormSubmit: (todoCreate: TodoCreate) => void
@@ -13,7 +13,6 @@ export const AddTodoForm: React.FC<Props> = ({ onFormSubmit }) => {
   const [form] = Form.useForm()
 
   const onFinish = () => {
-    console.log('@@@@@@@@@ clicked');
     onFormSubmit({
       task: form.getFieldValue('name'),
       completed: false
@@ -27,7 +26,7 @@ export const AddTodoForm: React.FC<Props> = ({ onFormSubmit }) => {
       <Row gutter={20}>
         <Col xs={24} sm={24} md={17} lg={19} xl={20}>
           <Form.Item name={'name'} rules={[{ required: true, message: 'This field is required' }]}>
-            <Input placeholder="What needs to be done?" data-testid="add-input"/>
+            <Input placeholder="What needs to be done?" data-testid="add-input" />
           </Form.Item>
         </Col>
         <Col xs={24} sm={24} md={7} lg={5} xl={4}>

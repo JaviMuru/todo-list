@@ -3,10 +3,10 @@ import { Card, Col, PageHeader, Row } from 'antd'
 import { AddTodoForm } from './_components/AddTodoForm'
 import { TodoList } from './_components/TodoList'
 import React from 'react'
-
-import './styles.less'
 import { LoadingScreen } from '../../_base/LoadingScreen'
 import { TodoCreate } from 'core/domain/model/Todo/TodoCreate'
+
+import './styles.less'
 
 interface Props {
   todos?: Todo[]

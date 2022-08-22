@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tooltip, Tag, List, Button, Popconfirm, Switch, Modal } from 'antd'
+import { Tooltip, Tag, List, Button, Switch, Modal } from 'antd'
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons'
 
 import './styles.less'
@@ -58,7 +58,7 @@ export const TodoItem: React.FC<Props> = ({ todo, onTodoRemoval, onTodoToggle })
         <Tag color={todo.completed ? 'cyan' : 'red'} className="todo-tag">
           {todo.task}
         </Tag>
-        <p>{new Date(todo.createdDate).toLocaleString("es-ES")} UTC</p>
+        <p>{new Date(todo.createdDate).toLocaleString('es-ES')} UTC</p>
       </div>
     </List.Item>
   )
